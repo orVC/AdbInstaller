@@ -1,6 +1,6 @@
 {
-  "versionCode": 13,
-  "versionName": "1.12",
-  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.12/adb-install-v1.12.apk",
-  "notes": "修复遥控器方向键导航：输入框上下键、启动焦点、页签上下跳转"
+  "versionCode": 14,
+  "versionName": "1.13",
+  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.13/adb-install-v1.13.apk",
+  "notes": "修复手机窄屏页签文字截断；修复初始化代码错位"
 }
