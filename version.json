@@ -1,6 +1,6 @@
 {
-  "versionCode": 14,
-  "versionName": "1.13",
-  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.13/adb-install-v1.13.apk",
-  "notes": "修复手机窄屏页签文字截断；修复初始化代码错位"
+  "versionCode": 15,
+  "versionName": "1.14",
+  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.14/adb-install-v1.14.apk",
+  "notes": "更名为「隔空装」"
 }

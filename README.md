@@ -1,6 +1,8 @@
-# ADB 安装器 · AdbInstaller
+# 隔空装 · AdbInstaller
 
-电视 / 机顶盒上的 APK 安装器：**全程用手机给电视装应用**，不用电脑、不用 U 盘。
+手机隔空给电视装 APK：**手机不碰电视**，在同一个 WiFi 里直连安装，不用电脑、不用 U 盘。
+
+> 名字取"隔空"二字——隔着局域网，把应用装进电视。
 
 **中文** | [English](#english)
 
@@ -8,7 +10,7 @@
 
 ## 下载
 
-到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.13）。
+到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.14）。
 
 手机和电视装**同一个文件**即可，功能完全一样。
 
@@ -77,7 +79,7 @@ An APK installer that runs on the TV / TV box itself: **install apps onto your T
 
 ## Download
 
-Get the latest `adb-install-vX.Y.apk` (currently v1.13) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
+Get the latest `adb-install-vX.Y.apk` (currently v1.14) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
 
 Install the **same file** on both the phone and the TV — identical functionality.
 
