@@ -1,6 +1,6 @@
 {
-  "versionCode": 12,
-  "versionName": "1.11",
-  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.11/adb-install-v1.11.apk",
-  "notes": "下载后校验安装包（包名/版本号），避免拉到错包"
+  "versionCode": 13,
+  "versionName": "1.12",
+  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.12/adb-install-v1.12.apk",
+  "notes": "修复遥控器方向键导航：输入框上下键、启动焦点、页签上下跳转"
 }

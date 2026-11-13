@@ -8,7 +8,7 @@
 
 ## 下载
 
-到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.11）。
+到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.12）。
 
 手机和电视装**同一个文件**即可，功能完全一样。
 
@@ -77,7 +77,7 @@ An APK installer that runs on the TV / TV box itself: **install apps onto your T
 
 ## Download
 
-Get the latest `adb-install-vX.Y.apk` (currently v1.11) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
+Get the latest `adb-install-vX.Y.apk` (currently v1.12) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
 
 Install the **same file** on both the phone and the TV — identical functionality.
 
