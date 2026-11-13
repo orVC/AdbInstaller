@@ -1,10 +1,10 @@
-# ADB 安装器（AdbInstaller）
+# ADB 安装器 · AdbInstaller
 
 电视 / 机顶盒上的 APK 安装器：**用手机给电视装应用，不用电脑、不用 U 盘。**
 
-> 本仓库只发布安装包（Release），不提供源码。
->
-> Install APKs on Android TV boxes from your phone — bundled `adb`, LAN scan, QR upload.
+**中文** | [English](#english)
+
+> 本仓库只发布安装包（Release），不提供源码 / This repo only publishes the APK in Releases, no source code.
 
 ## 下载
 
@@ -56,3 +56,62 @@
 - 系统要求：Android 5.1+（minSdk 21，targetSdk 28）。
 - 应用不申请 root，也不向任何服务器上传数据；网络行为仅限你的局域网。
 - 请只安装你信任的 APK；使用本工具造成的后果由使用者自行承担。
+
+---
+
+# English
+
+An APK installer that runs on the TV / TV box itself: **install apps onto your TV from your phone — no PC, no USB drive.**
+
+> This repository only publishes the APK in [Releases](../../releases); source code is not published.
+
+## Download
+
+Get the latest `adb-install-vX.Y.apk` (currently v1.8) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
+
+Install the **same file** on both the phone and the TV — identical functionality.
+
+## Install to your TV from a phone (recommended)
+
+Requirements: phone and TV on the **same Wi-Fi / router** (same subnet, no "AP isolation").
+
+1. **TV**: enable *Developer options → USB debugging / Network debugging* (Xiaomi TV: Settings → About → tap the build number repeatedly), and install this app on it first (via USB drive, or push it with any `adb`);
+2. **Phone**: install the same APK;
+3. Open the app → **搜索设备 (Scan devices)** → tap **扫描局域网设备 (Scan LAN)** — takes ~3–10 s;
+4. Tap the TV's `IP:5555` in the list (compare with the IP shown on the TV's *推送文件 / Push files* tab);
+5. On the **TV**, accept **"Allow USB debugging"** with *Always allow* → OK; if the phone still reports *unauthorized*, tap the device once more (the app reconnects automatically);
+6. On the phone switch to **文件目录 (Files)** → open the folder containing your APK (e.g. `Download`) → select it;
+7. The phone logs `Performing Streamed Install` → `Success` — the app is now installed on the TV.
+
+> No need to tap *获取本机 ADB 权限 (Get local ADB permission)* on the phone — it connects to the TV, not to itself.
+
+## Install on the TV itself (no second device)
+
+1. Get the APK onto the TV: USB drive, or use the *推送文件 / Push files* tab and scan the QR from a phone (uploads to `/sdcard/AdbInstaller`);
+2. Open the app → **设置 (Settings)** → tap **获取本机 ADB 权限**;
+3. Accept **"Allow USB debugging"** with *Always allow* → OK, then **tap the button once more**;
+4. Status turns green → switch to **文件目录** → select the APK to install.
+
+## The four tabs
+
+| Tab | What it does |
+| --- | --- |
+| 设置 (Settings) | Target address + get local ADB permission (bundled ARM32 `adb`, connects to `127.0.0.1:5555`) |
+| 搜索设备 (Scan) | Scans ports `5555` across `1–254` of your subnet; tap a device to connect — this is how phone-to-TV install works |
+| 文件目录 (Files) | Built-in file browser (does **not** rely on the system DocumentsUI); select an APK to `adb install` it |
+| 推送文件 (Push) | Phone scans a QR / opens a URL to upload files to `/sdcard/AdbInstaller` (default port 56789, auto-increments if busy) |
+
+## FAQ
+
+- **Phone found the TV but still shows "unauthorized"**: you must accept *"Allow USB debugging"* with **Always allow** on the TV (on some Xiaomi TVs the dialog appears in the top-left corner). Then tap the device again on the phone.
+- **Scan finds nothing**: make sure network debugging is enabled on the TV and both devices are on the same subnet. A wired TV plus a phone on mobile data will not work.
+- **"No app can perform this action" when picking a file**: older builds relied on the system file picker; the built-in browser removes that dependency.
+- **"Cannot execute bundled adb"**: the bundled `adb` is ARM32; a 64-bit-only user space needs an aarch64 build.
+- **QR page does not open on the phone**: again, different subnets or "AP isolation" on the router.
+- **No directories listed on Android 13/14**: make sure the storage permission is granted (the app targets SDK 28 and uses the legacy permission model).
+
+## Notes
+
+- Requires Android 5.1+ (minSdk 21, targetSdk 28).
+- The app does not request root and uploads nothing to any server; all network traffic stays on your LAN.
+- Only install APKs you trust. Use at your own risk.
