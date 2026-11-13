@@ -1,6 +1,8 @@
 # ADB 安装器 · AdbInstaller
 
-电视 / 机顶盒上的 APK 安装器：**用手机给电视装应用，不用电脑、不用 U 盘。**
+电视 / 机顶盒上的 APK 安装器：**用手机给电视装应用**。
+
+首次把它自己装到电视上，仍然需要一次外部手段（U 盘 / 小米电视助手 / 电脑 adb，见下）；装好之后，**以后再装任何应用都不再需要电脑和 U 盘**。
 
 **中文** | [English](#english)
 
@@ -11,6 +13,24 @@
 到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.8）。
 
 手机和电视装**同一个文件**即可，功能完全一样。
+
+## 前提：第一次怎么把它装到电视上（避不开的一步）
+
+这里必须说实话：**本应用不能自己把自己装上去**。它能解决的是"之后每一次装应用"，而不是它自己的首次安装——第一次仍然需要一次外部手段。
+
+小米电视上常见途径（按省事程度排序）：
+
+1. **U 盘（最省事）**：把 APK 拷到 U 盘 → 插到电视 → 电视会提示检测到 U 盘 → 用自带的「U 盘安装 / 媒体中心」打开安装。若提示未知来源，到 **设置 → 应用 → 特殊应用权限 → 安装未知应用** 里允许。
+2. **小米电视助手（官方手机 App）**：手机装「小米电视助手」，与电视同一 WiFi，连接后可直接把手机里的 APK 推送到电视安装。
+3. **电视自带的浏览器 / 文件管理器**：部分型号带有浏览器或文件管理，可直接下载并打开 APK 安装。
+4. **电脑 + adb**：电脑与电视同一网段，电视开启「开发者选项 → USB 调试」（部分机型需先用 USB 线连一次并执行 `adb tcpip 5555`），然后：
+   ```
+   adb connect <电视IP>:5555
+   adb install adb-install-vX.Y.apk
+   ```
+5. **电视上已有的第三方市场 / 文件管理器**：如当贝市场、小白文件管理器等，可从中安装本 APK。
+
+装好这一次之后，后续所有 APK 都可以用本应用完成：手机扫码连电视直接装，或者电视上自己选文件装，不再需要 U 盘和电脑。
 
 ## 手机给电视装（主流用法，推荐）
 
@@ -61,7 +81,9 @@
 
 # English
 
-An APK installer that runs on the TV / TV box itself: **install apps onto your TV from your phone — no PC, no USB drive.**
+An APK installer that runs on the TV / TV box itself: **install apps onto your TV from your phone.**
+
+Getting this app onto the TV the first time still requires one external step (USB drive / Xiaomi TV Assistant / a PC with adb — see below). After that, installing any further APK no longer needs a PC or a USB drive.
 
 > This repository only publishes the APK in [Releases](../../releases); source code is not published.
 
@@ -70,6 +92,24 @@ An APK installer that runs on the TV / TV box itself: **install apps onto your T
 Get the latest `adb-install-vX.Y.apk` (currently v1.8) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
 
 Install the **same file** on both the phone and the TV — identical functionality.
+
+## Prerequisite: getting this app onto the TV the first time
+
+To be straightforward: **this app cannot install itself.** What it solves is *every* install after the first one — the very first install still needs one external path.
+
+Common options on a Xiaomi TV (roughly from easiest):
+
+1. **USB drive (easiest)**: copy the APK to a USB stick → plug it into the TV → the TV prompts about the drive → open the built-in *USB install / Media Center* and install it. If it complains about unknown sources, allow it under **Settings → Apps → Special app access → Install unknown apps**.
+2. **Xiaomi TV Assistant (official phone app)**: install "小米电视助手" on the phone, connect over the same Wi-Fi, and push the APK straight to the TV.
+3. **The TV's built-in browser / file manager**: some models ship one; download and open the APK there.
+4. **PC with adb**: TV and PC on the same subnet, enable *Developer options → USB debugging* on the TV (some models need a one-time USB connection plus `adb tcpip 5555`), then:
+   ```
+   adb connect <TV_IP>:5555
+   adb install adb-install-vX.Y.apk
+   ```
+5. **A third-party store / file manager already installed** (e.g. 当贝市场, 小白文件管理器): install this APK from there.
+
+Once it is installed, every later APK can be handled by this app: scan-and-install from the phone, or pick the file on the TV itself — no USB drive or PC needed.
 
 ## Install to your TV from a phone (recommended)
 
