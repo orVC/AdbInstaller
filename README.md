@@ -8,7 +8,7 @@
 
 ## 下载
 
-到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.8）。
+到 [Releases](https://github.com/orVC/AdbInstaller/releases/latest) 下载最新的 `adb-install-vX.Y.apk`（当前 v1.9）。
 
 手机和电视装**同一个文件**即可，功能完全一样。
 
@@ -43,7 +43,7 @@
 
 | 页签 | 作用 |
 | --- | --- |
-| 设置 | 目标地址 + 获取本机 ADB 权限（内置 ARM32 adb，连 `127.0.0.1:5555`，用于在电视本机安装） |
+| 设置 | 目标地址（`127.0.0.1:5555` = 本机，填电视 `IP:5555` = 连那台电视）+「获取 ADB 权限」（内置 ARM32 adb） |
 | 搜索设备 | 扫描局域网 `1–254` 的 `5555` 端口，点一下即连接该设备 —— 手机给电视装就靠它 |
 | 文件目录 | 内置文件浏览器（不依赖系统 DocumentsUI），选中 APK 直接 adb 安装 |
 | 推送文件 | 手机扫码/浏览器上传到 `/sdcard/AdbInstaller`（默认端口 56789，被占用自动顺延） |
@@ -73,7 +73,7 @@ An APK installer that runs on the TV / TV box itself: **install apps onto your T
 
 ## Download
 
-Get the latest `adb-install-vX.Y.apk` (currently v1.8) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
+Get the latest `adb-install-vX.Y.apk` (currently v1.9) from [Releases](https://github.com/orVC/AdbInstaller/releases/latest).
 
 Install the **same file** on both the phone and the TV — identical functionality.
 
@@ -108,7 +108,7 @@ Requirements: ADB debugging enabled on the TV, and phone + TV on the **same Wi-F
 
 | Tab | What it does |
 | --- | --- |
-| 设置 (Settings) | Target address + get local ADB permission (bundled ARM32 `adb`, connects to `127.0.0.1:5555`, for installing on the TV itself) |
+| 设置 (Settings) | Target address (`127.0.0.1:5555` = this device, TV's `IP:5555` = that TV) + **Get ADB permission** (bundled ARM32 `adb`) |
 | 搜索设备 (Scan) | Scans ports `5555` across `1–254` of your subnet; tap a device to connect — this is how phone-to-TV install works |
 | 文件目录 (Files) | Built-in file browser (does **not** rely on the system DocumentsUI); select an APK to `adb install` it |
 | 推送文件 (Push) | Phone scans a QR / opens a URL to upload files to `/sdcard/AdbInstaller` (default port 56789, auto-increments if busy) |
