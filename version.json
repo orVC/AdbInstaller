@@ -1,6 +1,6 @@
 {
-  "versionCode": 10,
-  "versionName": "1.9",
-  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.9/adb-install-v1.9.apk",
-  "notes": "设置页文案澄清：目标地址可填电视 IP"
+  "versionCode": 11,
+  "versionName": "1.10",
+  "apk": "https://github.com/orVC/AdbInstaller/releases/download/v1.10/adb-install-v1.10.apk",
+  "notes": "设置页新增「检查更新」按钮，下载走 gh-proxy 加速"
 }
